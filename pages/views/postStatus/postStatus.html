@@ -1,0 +1,33 @@
+<div class="page" id="postStatus">
+    <div class="content">
+        <div class="intro">
+            <!-- <span class="tall" @click="toTimeline">Banana</span> -->
+            <span class="small">30</span>
+            
+        </div>
+        <div class="input-text">
+            <textarea name="" id="postMsg" autofocus rows="2" placeholder="What's happening?" maxlength="30"></textarea>
+        </div>
+        <!-- <form action="http://cp01-rdqa-dev416.cp01.baidu.com:8889/banana/util/uploadImage" method="post" enctype="multipart/form-data" id="form">
+            <input id="pic1" name="file" type="file" onchange="pic()"/>
+            <input value="提交" type="botton" height="50" @click="submit"/>
+            <input type="submit">
+        </form>
+        <div id="uploadContainer" class="uploadImage-list">
+            <div class="item">
+                <div id="feedback-upload" class="upload-btn" ></div>
+                <img class="img" src="../static/images/Camera.png" />
+            </div>
+        </div> -->
+        <div class="camera" id="uploader-demo">
+            <img :src="pic_url">
+            <div id="filePicker"></div>
+        </div>
+        <!-- <div id="uploader-demo">
+            <div id="fileList" class="uploader-list"></div>
+            <div id="filePicker">选择图片</div>
+        </div> -->
+
+    </div>
+    
+</div>

@@ -1,0 +1,62 @@
+<div class="page" id="timeline">
+    <!-- 这里是页面内容区 -->
+    <div class="content pull-to-refresh-content infinite-scroll infinite-scroll-bottom" data-ptr-distance="50">
+        <!-- <div class="title-bar">
+            <span class="icon-arrow"></span>
+            <span class="icon-profile"></span>
+            <span class="icon-pencil"></span>
+        </div> -->
+        <div class="header">
+            <div class="banana" id="banana"></div>
+        </div>
+        <div class="feeds">
+            <div class="feed" v-for="feed in feeds">
+                <div class="top">
+                    <div class="head-pic" @click="toHomePage">
+                        <img :src="feed.head" alt="">
+                    </div>
+                    <div class="head-info">
+                        <div class="name">{{feed.name}}</div>
+                        <div class="time">{{feed.time}}</div>
+                    </div>
+                    <div class="del-this" @click="delThis($index)">删除</div>
+                </div>
+                <div class="text">
+                    {{feed.text}}
+                </div>
+                <div class="mid-img">
+                    <img :src="feed.img" alt="">
+                </div>
+
+                <div class="bottom">
+                    <div class="show">
+                        <span class="like">{{feed.like}} like</span>
+                        <span class="hehe">{{feed.hehe}} 呵呵</span>
+                        <span class="hehe">{{feed.see}} 朕已阅</span>
+                    </div>
+                    <div class="cmt" elem-index="{{$index}}">
+                        <div class="comment" v-for="cmt in feed.comments">
+                            <span class="name">{{cmt.name}}</span>
+                            {{cmt.text}}
+                            <span class="delete" @click="del($event, $index)">X</span>
+                        </div>
+                        <div class="more" @click="moreCmt($index, $event)">View more comments</div>
+                    </div>
+                    <div class="opt">
+                        <span class="unlike" @click="like($event, $index)"></span>
+                        <span class="hehe" @click="hehe($index)">呵呵</span>
+                        <span class="hehe" @click="see($index)">朕已阅</span>
+                        <input type="text" class="add" placeholder="Add more comments" @keyup.enter="submit($event, $index)">
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- <div class="loading">正在加载</div> -->
+            <div class="infinite-scroll-preloader">
+                <div class="preloader"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
